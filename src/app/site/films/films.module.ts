@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchformComponent } from './searchform/searchform.component';
 import { SearchmovieService } from './services/searchmovie.service';
+import { ListDirective } from './directives/list.directive';
 
 const routes: Routes = [
   {
@@ -14,7 +15,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [FilmsComponent, SearchformComponent],
+  declarations: [FilmsComponent, SearchformComponent, ListDirective],
   providers: [SearchmovieService],
   imports: [
     CommonModule,

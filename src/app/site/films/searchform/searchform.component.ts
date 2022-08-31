@@ -9,16 +9,14 @@ import { FormValidators } from '../form-validators';
   styleUrls: ['./searchform.component.css']
 })
 export class SearchformComponent implements OnInit {
-
-  searchForm !: FormGroup;
-  title !: FormControl;
-  year !: FormControl;
-
-  constructor(
-    private fb: FormBuilder,
+  searchForm!: FormGroup;
+  title!: FormControl;
+  year!: FormControl;
+  
+  constructor(private fb: FormBuilder,
     private searchMovie: SearchmovieService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     let titlePattern = '[ a-zA-Z0-9,\.]+';
     let yearPattern = '[0-9]{4}';
     this.title = this.fb.control(
@@ -42,6 +40,4 @@ export class SearchformComponent implements OnInit {
     if (title)
       this.searchMovie.search(action, title, year);
   }
-
-
 }
